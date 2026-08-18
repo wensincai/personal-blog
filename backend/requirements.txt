@@ -6,3 +6,10 @@ python-jose[cryptography]==3.3.0
 passlib[bcrypt]==1.7.4
 python-multipart==0.0.17
 pillow==11.0.0
+requests==2.32.3
+httpx==0.27.2
+beautifulsoup4==4.12.3
+
+# ── 可选采集引擎（按需安装，缺失时相应功能自动降级）─────────────
+# SPA/公众号采集：playwright  # 另需执行: playwright install chromium
+# 通用采集增强引擎：scrapling # 会额外拉取 curl_cffi 等运行时依赖

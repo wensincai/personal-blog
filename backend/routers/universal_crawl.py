@@ -20,8 +20,15 @@ from pydantic import BaseModel, HttpUrl
 from sqlalchemy.orm import Session
 from bs4 import BeautifulSoup
 
-# Scrapling 引擎
-from scrapling import Fetcher, StealthyFetcher
+# Scrapling 引擎（可选依赖）：缺少时 _fetch_with_scrapling 报错，
+# 调用方回退到原生 Playwright / requests 路径，不影响应用启动。
+try:
+    from scrapling import Fetcher, StealthyFetcher
+    SCRAPLING_AVAILABLE = True
+except ImportError:
+    Fetcher = None
+    StealthyFetcher = None
+    SCRAPLING_AVAILABLE = False
 
 # 策略化重构（v2）：站点提取策略注册表 + 双轨调度
 from .crawl_strategies import (
@@ -100,6 +107,8 @@ def _needs_browser(url: str) -> bool:
 
 def _fetch_with_scrapling(url: str) -> str:
     """使用 Scrapling Fetcher (curl_cffi) 获取页面"""
+    if not SCRAPLING_AVAILABLE:
+        raise Exception("Scrapling 引擎未安装（pip install scrapling），请使用 Playwright 路径")
     fetcher = Fetcher()
     response = fetcher.get(url)
     if response.status != 200:

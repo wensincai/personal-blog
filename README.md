@@ -34,8 +34,9 @@ pip install -r requirements.txt
 # 配置环境变量（必做：生成自己的 SECRET_KEY 与管理员密码）
 cp .env.example .env            # Windows: copy .env.example .env
 
-# 可选：SPA / 公众号采集需要 Playwright
-playwright install chromium
+# 可选采集引擎（缺失时相应功能自动降级，不影响启动）
+pip install playwright && playwright install chromium   # SPA/公众号采集
+pip install scrapling                                   # 通用采集增强引擎
 
 uvicorn app:app --host 0.0.0.0 --port 8889 --reload
 ```
