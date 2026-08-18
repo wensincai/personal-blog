@@ -1,4 +1,4 @@
-# Personal Blog - Markdown 渲染技术方案
+﻿# Personal Blog - Markdown 渲染技术方案
 
 > **文档状态**：早期设计方案。当前实现以访客端 `PostDetail.jsx` 的前端渲染为准（KaTeX 已本地化到 `frontend/public/vendor`）；本文部分章节（如"后端预渲染"）为设计稿，细节以源码为准。相关总览见 `01-architecture-overview.md`、`03-frontend-design.md`。
 
@@ -441,3 +441,4 @@ npm install react-syntax-highlighter
 
 ---
 
+*本文档由 AI 根据项目源码自动生成。*

@@ -1,4 +1,4 @@
-# Personal Blog - 后端设计文档
+﻿# Personal Blog - 后端设计文档
 
 > FastAPI + SQLAlchemy + SQLite 架构，配置集中管理（`backend/config.py`）。
 
@@ -216,3 +216,4 @@ def get_db():
 
 ---
 
+*本文档由 AI 根据项目源码自动生成，并已按当前代码修订。*

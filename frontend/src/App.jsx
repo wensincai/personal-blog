@@ -149,12 +149,6 @@ function App() {
           } 
         />
         <Route
-          element={
-            <PrivateRoute>
-            </PrivateRoute>
-          }
-        />
-        <Route
           path="/admin/settings"
           element={
             <PrivateRoute>

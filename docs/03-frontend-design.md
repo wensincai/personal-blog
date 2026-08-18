@@ -1,4 +1,4 @@
-# Personal Blog - 前端设计文档
+﻿# Personal Blog - 前端设计文档
 
 > React 18 + Vite + Tailwind CSS + 双主题架构，配置通过 Vite 环境变量注入。
 
@@ -31,6 +31,7 @@ frontend/
     │   ├── Dashboard.jsx   # 管理仪表盘
     │   ├── Posts.jsx / PostEdit.jsx
     │   ├── CrawlEdit.jsx / WechatCrawlEdit.jsx / UniversalCrawlEdit.jsx
+    │   └── admin/          # Categories / Images / Settings
     ├── components/         # 访客端通用组件
     ├── components-preline/ # 管理后台组件库（Button/Card/Input/Sidebar）
     └── utils/              # colorPalette / errorMessage
@@ -180,9 +181,6 @@ api.interceptors.request.use(config => {
 - `WechatCrawlEdit.jsx`：公众号文章采集
 - `UniversalCrawlEdit.jsx`：通用采集（策略链，支持更多站点）
 
-
-- 基于 WebSocket 的实时对话，支持图片（≤4 张、每张 ≤8MB）
-
 ---
 
 ## 8. 状态管理
@@ -225,3 +223,4 @@ export default defineConfig({
 
 ---
 
+*本文档由 AI 根据项目源码自动生成，并已按当前代码修订。*

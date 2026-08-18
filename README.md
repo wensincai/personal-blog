@@ -1,5 +1,6 @@
 # Personal Blog
 
+一个面向个人使用的全栈博客系统：FastAPI + SQLite 后端，React + Vite + Tailwind 前端，支持文章管理、公众号/通用网页采集、图片管理与 SSO 登录。
 
 ## ✨ 功能特性
 
@@ -10,6 +11,7 @@
   - 通用采集（`/api/universal-crawl`）—— 站点提取策略链（掘金 / CSDN / 通用）
   - 正文噪音剪枝（crawl4ai Pruning 思路本地化）+ 编码/数学公式修复
 - **访客端**：Neobrutalism 风格文章渲染、KaTeX 数学公式（本地化）、SEO 友好 URL
+- **管理后台**：Preline UI 风格，文章/分类/标签/图片/设置管理
 - **认证**：本地 JWT（HS256）+ SSO Cookie 双模式，密钥集中配置
 
 ## 📁 目录结构
@@ -91,4 +93,5 @@ cd frontend && npm run build    # 产物在 frontend/dist/
 ## 🔒 安全提示
 
 - 仓库中的配置均为**占位符**，部署前务必通过环境变量覆盖（见 `.env.example`）
+- 默认管理员密码、`BLOG_SECRET_KEY` 请务必更换
 - `backend/uploads/`、`*.db*` 等运行时数据已被 `.gitignore` 排除，不会入库
